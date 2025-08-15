@@ -1,0 +1,16 @@
+# Global owners - these people will be the default owners for everything in the repo
+* @SachuPickachu
+
+# Specific directory owners (optional - you can customize these)
+/docs/ @SachuPickachu
+/scripts/ @SachuPickachu
+/config/ @SachuPickachu
+/images/ @SachuPickachu
+/chats/ @SachuPickachu
+
+# Specific file owners (optional - you can customize these)
+README.md @SachuPickachu
+README-PRODUCTION.md @SachuPickachu
+LICENSE @SachuPickachu
+CODE_OF_CONDUCT.md @SachuPickachu
+CONTRIBUTING.md @SachuPickachu
