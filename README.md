@@ -31,7 +31,7 @@ A complete, portable local LLM stack setup for Windows with Ollama, Open WebUI, 
 - Windows 10/11 with Python 3.11 or 3.12
 - NVIDIA GPU (GTX 1080+ recommended) or CPU fallback
 - At least 24GB free on C: drive (for build tools)
-- At least 400GB free on E: drive (for models and data)
+- At least 400GB free (for models and data) - Configurable location
 - Microsoft Visual C++ Build Tools (Desktop C++ workload + Windows 10/11 SDK)
 
 ## 🖥️ Operating System Support
