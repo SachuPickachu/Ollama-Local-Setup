@@ -316,6 +316,7 @@ $env:DATA_ROOT\ (default: E:\OLLAMA)
 
 #### 1. "ollama command not found"
 **Problem**: Ollama not in PATH
+
 **Solution**: 
 ```powershell
 # Find Ollama location
@@ -325,6 +326,7 @@ Get-ChildItem -Path "$env:LOCALAPPDATA\Programs\Ollama" -Recurse -Name "ollama.e
 
 #### 2. "No space left on device" during installation
 **Problem**: C: drive space insufficient
+
 **Solution**:
 ```powershell
 # Option 1: Use installer which takes custom location from environment variable (recommended)
@@ -337,6 +339,7 @@ pip config set global.cache-dir "$env:PIP_CACHE_DIR"
 
 #### 3. "Python version not supported"
 **Problem**: Open WebUI requires Python 3.11-3.12
+
 **Solution**:
 ```powershell
 # Install Python 3.12 alongside existing
@@ -347,6 +350,7 @@ py -3.12 -m venv .venv
 
 #### 4. "table embeddings already exists"
 **Problem**: RAG database conflict
+
 **Solution**:
 ```powershell
 # Option 1: Rename existing database
@@ -357,6 +361,7 @@ $env:CHROMA_PERSIST_DIRECTORY = "$env:DATA_ROOT\rags\chroma_new"
 
 #### 5. "Permission denied" on cache
 **Problem**: Locked pip cache files
+
 **Solution**:
 ```powershell
 .\scripts\fix-cache-permissions.ps1
@@ -366,6 +371,7 @@ pip cache purge
 
 #### 6. Open WebUI not starting
 **Problem**: Incorrect startup command
+
 **Solution**:
 ```powershell
 # Use the CLI entrypoint
@@ -375,6 +381,7 @@ open-webui serve
 
 #### 7. Models not loading / downloading
 **Problem**: Network/DNS issues
+
 **Solution**:
 ```powershell
 # Set reliable DNS
@@ -386,6 +393,7 @@ ipconfig /flushdns
 
 #### 8. "Microsoft C++ Build Tools required"
 **Problem**: Missing build tools for RAG dependencies
+
 **Solution**:
 ```powershell
 # Install build tools (requires C: drive space)
@@ -395,6 +403,7 @@ winget install Microsoft.VisualStudio.2022.BuildTools
 
 #### 9. Security and Access Issues
 **Problem**: Unauthorized access or security concerns
+
 **Solution**:
 ```powershell
 # Basic security setup
@@ -409,6 +418,7 @@ Get-NetFirewallRule | Where-Object {$_.DisplayName -like "*LocalLLM*"}
 
 #### 10. No models showing in UI or in ollama
 **Problem**: Web-UI and/or Ollama shows no models, when installation is done using custom location script.
+
 **Solution**:
 Ollama setup installs ollama as an application. This adds a startup entry in Windows. This starts ollama process without setting up our environment variables, pointing to custom data directory.
 You can disable this startup entry to avoid such issues. Our stop scripts do handle and terminate this process. Running stop-all and then start-all scripts will solve this issue.
