@@ -577,6 +577,7 @@ Copy-Item "$BackupPath\*" "$env:DATA_ROOT\" -Recurse
 - **Runbook**: `documents/runbook-local-llm.md` - Detailed setup and operation guide
 - **Decisions**: `documents/decisions-llm-runtime.md` - Technical decisions made
 - **Integrations**: `documents/integrations-ollama-tools.md` - Tool integration guides
+- **Future Scope**: `documents/future-scope.md` - Roadmap and planned features
 
 
 ## 🤝 Contributing
