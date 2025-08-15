@@ -1,0 +1,293 @@
+# =============================================================================
+# Ollama Local Setup - Git Ignore File
+# =============================================================================
+# This file excludes sensitive data, temporary files, and development artifacts
+# from version control to maintain security and cleanliness.
+
+# =============================================================================
+# SECURITY & SENSITIVE DATA
+# =============================================================================
+
+# WebUI secret keys and sensitive configuration
+.webui_secret_key
+*.secret
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.pwd
+
+# Security environment files
+**/security.env
+**/admin-credentials.txt
+**/credentials.txt
+
+# =============================================================================
+# VIRTUAL ENVIRONMENT
+# =============================================================================
+
+# Python virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# =============================================================================
+# DATA & CACHE DIRECTORIES
+# =============================================================================
+
+# Ollama data root (E:\OLLAMA)
+# Note: This is configured in env.ps1 but should not be tracked
+# as it contains models, logs, and user data
+**/OLLAMA/
+**/data/
+**/models/
+**/logs/
+**/cache/
+**/temp/
+**/tmp/
+
+# =============================================================================
+# LOGS & TEMPORARY FILES
+# =============================================================================
+
+# Log files
+*.log
+*.log.*
+logs/
+log/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Windows temporary files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =============================================================================
+# DEVELOPMENT & BUILD ARTIFACTS
+# =============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# =============================================================================
+# IDE & EDITOR FILES
+# =============================================================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =============================================================================
+# OPERATING SYSTEM FILES
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# PROJECT SPECIFIC
+# =============================================================================
+
+# Ollama specific
+**/ollama/
+**/webui/
+
+# Private chat logs and discussions
+chats/
+**/chats/
+
+# Generated configuration files
+**/generated/
+**/output/
+
+# Test results and coverage
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# =============================================================================
+# ENVIRONMENT FILES
+# =============================================================================
+
+# Environment variables (if any .env files exist)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =============================================================================
+# BACKUP & ARCHIVE FILES
+# =============================================================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+
+# Archive files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.zipx
+
+# =============================================================================
+# NOTES
+# =============================================================================
+# 
+# This .gitignore file is designed to:
+# 1. Protect sensitive data (keys, credentials, security configs)
+# 2. Exclude virtual environments and dependencies
+# 3. Ignore temporary and cache files
+# 4. Exclude IDE and editor-specific files
+# 5. Ignore OS-generated files
+# 6. Exclude data directories that contain models and user content
+#
+# If you need to track specific configuration files, consider:
+# - Using environment variables for sensitive values
+# - Creating template files (.template) for configuration
+# - Using .env.example files for environment variable examples
