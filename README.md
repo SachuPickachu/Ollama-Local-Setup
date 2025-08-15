@@ -373,7 +373,7 @@ open-webui serve
 # NOT: python -m open_webui
 ```
 
-#### 7. Models not loading
+#### 7. Models not loading / downloading
 **Problem**: Network/DNS issues
 **Solution**:
 ```powershell
@@ -406,6 +406,12 @@ winget install Microsoft.VisualStudio.2022.BuildTools
 # Check current firewall rules
 Get-NetFirewallRule | Where-Object {$_.DisplayName -like "*LocalLLM*"}
 ```
+
+#### 10. No models showing in UI or in ollama
+**Problem**: Web-UI and/or Ollama shows no models, when installation is done using custom location script.
+**Solution**:
+Ollama setup installs ollama as an application. This adds a startup entry in Windows. This starts ollama process without setting up our environment variables, pointing to custom data directory.
+You can disable this startup entry to avoid such issues. Our stop scripts do handle and terminate this process. Running stop-all and then start-all scripts will solve this issue.
 
 ### Performance Issues
 
